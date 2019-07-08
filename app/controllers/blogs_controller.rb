@@ -3,16 +3,17 @@ class BlogsController < ApplicationController
   end
 
   def index
+      @blogs = Blog.all
   end
 
   def new
-    @blog = Blog.new
+      @blog = Blog.new
   end
 
   def create
-    blog = Blog.new(blog_params)
-    blog.save
-    redirect_ti blogs_path
+      blog = Blog.new(blog_params)
+      blog.save
+      redirect_to blogs_path
   end
 
   def edit
